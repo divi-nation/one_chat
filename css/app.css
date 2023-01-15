@@ -1,0 +1,296 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.bottom_navigation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    transition: .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.bottom_navigation.killed{
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.tab{
+    width: 50px;
+    height: 50px;
+    border: 1px solid;
+}
+
+.bottom_navigation img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+.content{
+    width: 100vw;
+    height: calc(100vh - 70px);
+    background: rgb(203, 203, 203);
+    display: grid;
+    grid-template-columns: 5fr 0fr;
+    transition: .5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.content.active{
+    grid-template-columns: 0fr 5fr;
+
+
+}
+
+.content.full{
+    height: 100vh;
+}
+
+.chat{
+    position: relative;
+    background: rgb(216, 216, 216);
+    overflow: visible;
+
+
+
+
+}
+.chat.tagged{
+    border: 1px solid;
+    overflow-x: hidden;
+  
+
+}
+
+
+.type_area{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    height: 0px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-delay: 1s;
+    
+}
+
+.type_area.active{
+    height: 60px;
+    opacity: 1;
+
+
+}
+
+.streak{
+    background: white;
+    border: 1px solid;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add_streak{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    height: 70px;
+    width: 70px;
+    background: royalblue;
+    border-radius: 50%;
+
+}
+
+.upload_streak{
+    border-radius: 50px;
+    bottom: 50px;
+    right: 50px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    background: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+ }
+
+ .upload_streak.active{
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+     
+ }
+
+
+ .caption{
+    width: 300px;
+    margin-top: 30px;
+ }
+ .caption input{
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+
+ }
+
+ .image{
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+}
+.image input{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    
+}
+
+ 
+ .send{
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background: green;
+    bottom: 30px;
+    right: 30px;
+ }
+
+.chat_prompt{
+    height: 80px;
+    width: 80px;
+    background: blue;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 40px);
+    z-index: 2;
+    top: unset;
+    transition: 1.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.chat_prompt.active{
+    top: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 0px;
+    left: 0;
+    border-bottom-right-radius: 50px;
+}
+.chat_prompt.tagged{
+    background: red;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.chats_container{
+    border: 1px solid red;
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    padding-top: 30px;
+    
+    flex-direction: column;
+}
+.bubble{
+    width: 80%;
+    padding: 10px;
+    background: white;
+    margin-top: 20px;
+    position: relative;
+    color: #222;
+
+}
+.line {
+    width: 4px;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+}
+.l1{
+    background: rebeccapurple;
+    right: 0;   
+}
+.l2{
+    background: red;
+    left: 0;
+}
+
+.sender{
+    margin-left: 20%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    text-align: right;
+
+  
+}
+
+.receiver{
+    margin-right: 20%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: left;
+  
+}
+
+.info{
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.info span{
+    background: blue;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+
+}
+
+.info button{
+    margin-top: 40px;
+    width: 100px;
+    height: 40px;
+}

@@ -1,0 +1,120 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+    border: 2px solid orangered;
+    
+}
+
+ .matrix{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid;
+    display: flex;
+ }
+
+ .screen{
+    height: 100%;
+    width: 0px;
+    border: 1px solid red;
+    overflow: hidden;
+ }
+
+.s1.active{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+ }
+ .accounts{
+    flex-direction: column;
+    justify-content: space-evenly;
+
+ }
+ .acc{
+    border: 2px solid;
+    padding: 7px;
+    border-radius: 30px;
+    width: 200px;
+    text-align: center;
+    transition: .3s ease;
+    cursor: pointer;
+ }
+ .acc:hover{
+    background-color: orangered;
+    color: white;
+    box-shadow: 0 0 5px 1px rgba(182, 180, 180, 0.475);
+ }
+
+ .platforms{
+    width: 200px;
+    height: 40px;
+    border: 1px solid;
+    margin-left: calc(50% - 100px);
+    margin-top: 15px;
+ }
+
+ 
+.s2.active{
+    width: 100%;
+ }
+.s3.active{
+    width: 100%;
+ }
+.s4.active{
+    width: 100%;
+ }
+
+ p{
+    width: 200px;
+    align-items: center;
+    margin-left: calc(50% - 100px);
+    margin-top: 5px;
+    color: #222;
+    font-size: 12px;
+    text-align: center;
+
+
+ }
+
+ .pop_up{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0px;
+    background: orangered;
+    color: white;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+    transition: .4s cubic-bezier(0.215, 0.610, 0.355, 1);
+ }
+ .pop_up.active{
+    height: 250px;
+
+
+ }
+
+ .create{
+    width: 200px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 40px;
+    padding-left: 15px;
+    font-size: 13px;
+    color: #333;
+    outline: none;
+  }
+  .pop_up button{
+    padding-left: 0px;
+    border: 2px solid red;
+    color: orangered;
+  }
+  .close_pop_up{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 40px;
+    width: 40px;
+    border: 1px solid white;
+  }
